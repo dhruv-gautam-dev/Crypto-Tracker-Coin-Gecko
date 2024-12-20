@@ -41,7 +41,7 @@ function Navbar() {
           </div>
         </div>
         <div className="navbar-center">
-          <a className="text-xl btn btn-ghost">daisyUI</a>
+          <a className="text-xl btn btn-ghost">Cripto Tracker</a>
         </div>
         <div className="navbar-end">
           <button className="btn btn-ghost btn-circle">

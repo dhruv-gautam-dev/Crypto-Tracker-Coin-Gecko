@@ -11,8 +11,8 @@ function Banner() {
           <div className="text-5xl font-semibold tect-white">
             Cripto Tracker
           </div>
-          <div className="text-sm font-semibold text-center text-white">
-            Get all info regarding cripto currency{" "}
+          <div className="text-sm font-semibold text-center text-white top-10">
+            Get all info regarding cripto currency
           </div>
         </div>
       </div>
