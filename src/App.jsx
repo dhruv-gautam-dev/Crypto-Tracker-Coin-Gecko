@@ -7,13 +7,14 @@ import Navbar from "./components/Navbar/Navbar";
 import Banner from "./components/Banner/Banner";
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [currency, setCurrency] = useState("usd");
 
   return (
     <>
-      <Navbar />
+      {currency}
+      <Navbar setCurrency={setCurrency} />
       <Banner />
-      <CoinTable />
+      <CoinTable currency={currency} />
     </>
   );
 }

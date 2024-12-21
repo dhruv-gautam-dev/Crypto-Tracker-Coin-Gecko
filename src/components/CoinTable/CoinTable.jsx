@@ -3,7 +3,7 @@ import { fetchCoinData } from "../../Services/FetchCoinData";
 import { useQueries, useQuery } from "react-query";
 import { use } from "react";
 
-function CoinTable() {
+function CoinTable({ currency }) {
   //UseEffect
   // useEffect(() => {
 
@@ -13,8 +13,8 @@ function CoinTable() {
   //alternative to useEffect
   const [page, setPage] = useState(1);
   const { data, isLoading, isError, error } = useQuery(
-    ["coins", page],
-    () => fetchCoinData(page, "usd"),
+    ["coins", page, currency],
+    () => fetchCoinData(page, currency),
     {
       // retry: 2,
       // retryDelay: 1000,
