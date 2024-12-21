@@ -2,11 +2,13 @@ import { useContext, useEffect, useState } from "react";
 import { fetchCoinData } from "../../Services/FetchCoinData";
 import { useQueries, useQuery } from "react-query";
 import { use } from "react";
-import { CurrencyContext } from "../../context/CurrencyContext";
-
+// import { CurrencyContext } from "../../context/CurrencyContext";
+import currencyStore from "../../state/store";
+import { useNavigate } from "react-router-dom";
 function CoinTable() {
-  const { currency } = useContext(CurrencyContext);
-
+  // const { currency } = useContext(CurrencyContext);
+  const { currency } = currencyStore();
+  const navigate = useNavigate();
   //UseEffect
   // useEffect(() => {
 
@@ -25,6 +27,10 @@ function CoinTable() {
       staleTime: 1000 * 60 * 2,
     }
   );
+
+  function handleCoinRedirect(id) {
+    navigate(`/details/${id}`);
+  }
 
   // useEffect(() => {
   //   console.log(data);
@@ -59,8 +65,9 @@ function CoinTable() {
           data.map((coin) => {
             return (
               <div
+                onClick={() => handleCoinRedirect(coin.id)}
                 key={coin.id}
-                className="flex items-center justify-between w-full px-2 py-4 font-semibold text-white bg-transparent"
+                className="flex items-center justify-between w-full px-2 py-4 font-semibold text-white bg-transparent cursor-pointer"
               >
                 <div className="flex item-center justify-start gap-3 basis[35%]">
                   <div className="w-[5rem] h-[5rem]">
@@ -92,7 +99,7 @@ function CoinTable() {
       <div className="flex justify-center gap-4 item-center ">
         <button
           disabled={page == 1}
-          onClick={() => setPage(page + 1)}
+          onClick={() => setPage(page - 1)}
           className="text-2xl text-white btn btn-primary btn-wide"
         >
           prev
