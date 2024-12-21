@@ -1,9 +1,12 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { fetchCoinData } from "../../Services/FetchCoinData";
 import { useQueries, useQuery } from "react-query";
 import { use } from "react";
+import { CurrencyContext } from "../../context/CurrencyContext";
 
-function CoinTable({ currency }) {
+function CoinTable() {
+  const { currency } = useContext(CurrencyContext);
+
   //UseEffect
   // useEffect(() => {
 
