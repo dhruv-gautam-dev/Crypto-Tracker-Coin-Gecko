@@ -1,3 +1,5 @@
+/**imports */
+
 import { useContext, useEffect, useState } from "react";
 import { fetchCoinData } from "../../Services/fetchCoinData";
 import { useQueries, useQuery } from "react-query";
@@ -5,6 +7,8 @@ import { use } from "react";
 // import { CurrencyContext } from "../../context/CurrencyContext";
 import currencyStore from "../../state/store";
 import { useNavigate } from "react-router-dom";
+
+// functional component
 function CoinTable() {
   // const { currency } = useContext(CurrencyContext);
   const { currency } = currencyStore();
@@ -75,6 +79,7 @@ function CoinTable() {
                       src={coin.image}
                       alt="coin Image"
                       className="w-full h-full"
+                      loading="lazy"
                     />
                   </div>
                   <div className="flex flex-col basis-[35%]">
