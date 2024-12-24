@@ -16,7 +16,7 @@ function CoinInfoContainer({ coinId }) {
     isLoading,
     isError,
   } = useQuery(
-    ["historicData", coinId, currency],
+    ["historicData", coinId, currency, days, interval],
     () => fetchCoinHistoricData(coinId, interval, days, currency),
     {
       cacheTime: 1000 * 60 * 2,

@@ -5,6 +5,8 @@ import { useEffect } from "react";
 import parse from "html-react-parser";
 import currencyStore from "../state/store";
 import CoinInfoContainer from "../components/CoinInfo/CoinInfoContainer";
+import { Instagram } from "react-content-loader";
+
 function CoinDetailsPage() {
   const { currency } = currencyStore();
 
@@ -23,7 +25,7 @@ function CoinDetailsPage() {
   }, [coin]);
 
   if (isLoading) {
-    return <div>Loading ...</div>;
+    return <Instagram />;
   }
   if (isError) {
     return <div>Error: something went wrong</div>;

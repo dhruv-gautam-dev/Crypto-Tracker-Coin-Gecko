@@ -24,7 +24,7 @@ function Routing() {
           <Route
             path="/details/:coinId"
             element={
-              <Suspense fallback={<div>Loading Coin Details...</div>}>
+              <Suspense fallback={<List />}>
                 <CoinDetailsPage />
               </Suspense>
             }
