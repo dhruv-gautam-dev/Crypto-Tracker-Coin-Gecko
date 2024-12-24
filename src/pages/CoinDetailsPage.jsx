@@ -2,7 +2,7 @@ import { useQueries, useQuery } from "react-query";
 import { useParams } from "react-router-dom";
 import fetchCoinDetails from "../Services/fetchCoinDetails";
 import { useEffect } from "react";
-// import { parse } from "html-react-parser";
+import parse from "html-react-parser";
 import currencyStore from "../state/store";
 function CoinDetailsPage() {
   const { currency } = currencyStore();
@@ -34,8 +34,8 @@ function CoinDetailsPage() {
         <img src={coin?.image?.large} alt={coin.name} className="mb-5 h-52" />
         <h1 className="mb-5 text-4xl font-bold ">{coin?.name}</h1>
         <p className="w-full px-6 py-4 ">
-          {/* {parse(coin?.description?.en)}</p> */}
-          {coin?.description.en}
+          {parse(coin?.description?.en)}
+          {/* {coin?.description.en} */}
         </p>
         <div className="flex flex-col w-full md:flex-row md:justify-around">
           <div className="flex items-center gap-5 mb-4 md:mb-0">
