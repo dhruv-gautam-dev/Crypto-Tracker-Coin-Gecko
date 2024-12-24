@@ -1,9 +1,12 @@
+import BannerImage from "../../assets/bannerImage.jpg";
+
 function Banner() {
   return (
     <div>
       <img
         className="w-full h-[25rem] relative"
-        src="src\assets\bannerImage.jpg"
+        // src="src\assets\bannerImage.jpg"
+        src={BannerImage}
         alt=""
       />
       <div className="absolute top-20 left-0 right-0 ml-200px w-[20rem]">
