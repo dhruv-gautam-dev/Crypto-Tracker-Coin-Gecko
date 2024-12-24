@@ -3,6 +3,7 @@ import { Line } from "react-chartjs-2";
 import { CategoryScale } from "chart.js";
 import Chart from "chart.js/auto";
 
+Chart.register(CategoryScale);
 function CoinInfo({ historicData, setDays, setCoinInterval, days, currency }) {
   const chartDays = [
     {
@@ -30,12 +31,13 @@ function CoinInfo({ historicData, setDays, setCoinInterval, days, currency }) {
     console.log(e.target.options[e.target.selectedIndex].value);
     const daysSelected = e.target.options[e.target.selectedIndex].value;
     if (daysSelected == 1) {
-      setCoinInterval("");
+      setCoinInterval?.("");
     } else {
-      setCoinInterval("daily");
+      setCoinInterval?.("daily");
     }
-    setDays(e.target.options[e.target.selectedIndex].value);
+    setDays?.(e.target.options[e.target.selectedIndex].value);
   }
+
   if (!historicData) {
     return <Alert message="NO DATA AVAILABLE" />;
   }
@@ -48,15 +50,15 @@ function CoinInfo({ historicData, setDays, setCoinInterval, days, currency }) {
               let date = new Date(coinPrice[0]); //Converting unix stamp to date
               let time =
                 date.getHours() > 12
-                  ? `${date.getHours() - 12} : ${date.getMinutes()} PM`
-                  : `${date.getHours()} : ${date.getMinutes()} AM`;
-              return days === 1 ? time : date.toLocaleDateString();
+                  ? `${date?.getHours() - 12} : ${date?.getMinutes()} PM`
+                  : `${date?.getHours()} : ${date?.getMinutes()} AM`;
+              return days === 1 ? time : date?.toLocaleDateString();
             }),
             datasets: [
               {
                 label: `Price (Past ${days} ${
                   days === 1 ? "Day" : "Days"
-                })in ${currency.toUpperCase()}`,
+                })in ${currency?.toUpperCase()}`,
                 data: historicData.prices.map((coinPrice) => coinPrice[1]),
               },
             ],

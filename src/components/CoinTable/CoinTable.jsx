@@ -6,6 +6,7 @@ import { use } from "react";
 // import { CurrencyContext } from "../../context/CurrencyContext";
 import currencyStore from "../../state/store";
 import { useNavigate } from "react-router-dom";
+import { BulletList } from "react-content-loader";
 
 // functional component
 function CoinTable() {
@@ -55,15 +56,15 @@ function CoinTable() {
     //   {page}
     // </div>
     <div className="flex  flex-col justify-center mx-auto my-5 align-center gap-5 w[80vw] ">
-      <div className="flex justify-center w-[80vw] mx-auto px-2 py-4 font-semibold text-black bg-yellow-400 item-center">
+      <div className="flex rounded-full justify-center w-[80vw] mx-auto px-2 py-4 font-semibold text-black bg-yellow-400 item-center">
         {/* Header of table*/}
-        <div className="basis-[35%]">Coin</div>
-        <div className="basis-[25%]">Price</div>
-        <div className="basis-[20%]">24 Change</div>
-        <div className="basis-[20%]">Market Cap</div>
+        <div className="basis-[35%] pl-10">Coin</div>
+        <div className="basis-[35%]">Price</div>
+        <div className="basis-[30%]">24 Change</div>
+        <div className="basis-[25%]">Market Cap</div>
       </div>
       <div className="flex flex-col w-[80vw] mx-auto">
-        {isLoading && <div>Loading...</div>}
+        {isLoading && <BulletList />}
         {data &&
           data.map((coin) => {
             return (
@@ -72,7 +73,7 @@ function CoinTable() {
                 key={coin.id}
                 className="flex items-center justify-between w-full px-2 py-4 font-semibold text-white bg-transparent cursor-pointer"
               >
-                <div className="flex item-center justify-start gap-3 basis[35%]">
+                <div className="flex item-center justify-start gap-3 w-1/4 basis[35%]">
                   <div className="w-[5rem] h-[5rem]">
                     <img
                       src={coin.image}
@@ -81,12 +82,12 @@ function CoinTable() {
                       loading="lazy"
                     />
                   </div>
-                  <div className="flex flex-col basis-[35%]">
+                  <div className="flex flex-col basis-[35%] ">
                     <div className="text-3xl">{coin.name}</div>
                     <div className="text-xl">{coin.symbol}</div>
                   </div>
                 </div>
-                <div className="flex basis-[25%]">
+                <div className="flex basis-[25%] ">
                   <div>{coin.current_price}</div>
                 </div>
                 <div className="flex basis-[20%]">
