@@ -1,5 +1,4 @@
 /**imports */
-
 import { useContext, useEffect, useState } from "react";
 import { fetchCoinData } from "../../Services/fetchCoinData";
 import { useQueries, useQuery } from "react-query";
