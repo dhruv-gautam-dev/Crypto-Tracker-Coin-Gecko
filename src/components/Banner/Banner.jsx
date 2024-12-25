@@ -12,7 +12,7 @@ function Banner() {
       <div className="absolute top-20 left-0 right-0 ml-200px w-[20rem]">
         <div className="flex flex-col gap-4 ml-44">
           <div className="font-semibold text-white w-300 text-9xl ">
-            Cripto Tracker
+            Crypto Tracker
           </div>
         </div>
       </div>

@@ -52,7 +52,7 @@ function Navbar() {
           </div>
         </div>
         <div onClick={goToHome} className="navbar-center">
-          <a className="text-xl btn btn-ghost">Cripto Tracker</a>
+          <a className="text-xl btn btn-ghost">Crypto Tracker</a>
         </div>
         <div className="navbar-end">
           <button className="btn btn-ghost btn-circle">
