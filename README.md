@@ -1,4 +1,4 @@
-# Cripto Parser Coin Geeko
+# Crypto Parser Coin Geeko
 
 ### Live Demo
 You can view the live demo of this project [here](https://cripto-tracker-coin-gecko.vercel.app/).
