@@ -4,14 +4,14 @@ function Banner() {
   return (
     <div>
       <img
-        className="w-full h-[25rem] relative"
+        className="w-full h-[25rem] object-right relative"
         // src="src\assets\bannerImage.jpg"
         src={BannerImage}
         alt=""
       />
-      <div className="absolute top-20 left-0 right-0 ml-200px w-[20rem]">
-        <div className="flex flex-col gap-4 ml-44">
-          <div className="font-semibold text-white w-300 text-9xl ">
+      <div className="absolute left-0 right-0 flex items-center justify-center top-20">
+        <div className="px-4 text-center">
+          <div className="text-4xl font-bold text-white md:text-6xl lg:text-8xl drop-shadow-md ">
             Crypto Tracker
           </div>
         </div>

@@ -28,7 +28,7 @@ function CoinInfo({ historicData, setDays, setCoinInterval, days, currency }) {
     },
   ];
   function handleDayChange(e) {
-    console.log(e.target.options[e.target.selectedIndex].value);
+    // console.log(e.target.options[e.target.selectedIndex].value);
     const daysSelected = e.target.options[e.target.selectedIndex].value;
     if (daysSelected == 1) {
       setCoinInterval?.("");
@@ -43,7 +43,7 @@ function CoinInfo({ historicData, setDays, setCoinInterval, days, currency }) {
   }
   return (
     <div className="flex flex-col items-center justify-center w-full p-6 mt-6">
-      <div className="h-[500px] w-full">
+      <div className="w-full h-64 md:h-96">
         <Line
           data={{
             labels: historicData.prices.map((coinPrice) => {

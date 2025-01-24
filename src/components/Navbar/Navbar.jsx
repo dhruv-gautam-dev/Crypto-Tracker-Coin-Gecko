@@ -12,7 +12,7 @@ function Navbar() {
 
   return (
     <div>
-      <div className="navbar bg-base-100">
+      <div className="container flex items-center justify-between mx-auto navbar bg-base-100">
         <div className="navbar-start">
           <div className="dropdown">
             <div
@@ -52,7 +52,7 @@ function Navbar() {
           </div>
         </div>
         <div onClick={goToHome} className="navbar-center">
-          <a className="text-xl btn btn-ghost">Crypto Tracker</a>
+          <a className="text-lg text-white btn btn-ghost">Crypto Tracker</a>
         </div>
         <div className="navbar-end">
           <button className="btn btn-ghost btn-circle">
